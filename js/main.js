@@ -45,6 +45,7 @@ function isValidEmail(email){
     if (splittedEmail.length !== 2) return false; //if email doesn't contain exactly 1 "@" it wont be a 2 long
     if (splittedEmail[0].length === 0 || splittedEmail[0].length > 64) return false; //first email part must be a 1 to 63 characters long string
     if (splittedEmail[1].length === 0 || splittedEmail[1].length > 255) return false; //second email part must be a 1 to 254 characters long string
+    if (email.includes(" ")) return false;
 
     return true;
 }
