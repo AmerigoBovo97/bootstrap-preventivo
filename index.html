@@ -60,13 +60,13 @@
         <div class="container mt-2 mb-5">
             <div class="row justify-content-center">
                 
-                <div class="col-12 col-xl-9 mb-5">
+                <div class="col-12 col-xl-9 mb-5"> <!-- quote request -->
 
                     <h1>Richiesta Preventivo</h1>
                     <p>Compila il form per richedere un preventivo per i nostri servizi di sviluppo</p>
 
                     <!-- form -->
-                    <form>
+                    <form id="quote-request">
                         <div class="mb-3"> <!-- name -->
                           <label for="input-name" class="form-label">Nome</label>
                           <input type="text" class="form-control" id="input-name">
@@ -83,8 +83,8 @@
                         </div>
                   
                         <div class="mb-3"> <!-- job type -->
-                          <label for="input-email" class="form-label">Tipo di lavoro</label>
-                          <select class="form-select" aria-label="Default select example">
+                          <label for="job-Type" class="form-label">Tipo di lavoro</label>
+                          <select class="form-select" aria-label="Default select example" id="job-type">
                             <option selected>Seleziona il tipo di lavoro</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -93,8 +93,8 @@
                         </div>
                   
                         <div class="mb-3"> <!-- textarea -->
-                          <label for="select-job" class="form-label">Textarea con Bootstrap 5</label>
-                          <textarea class="form-control" id="select-job" style="height: 100px"></textarea>
+                          <label for="text-area" class="form-label">Textarea con Bootstrap 5</label>
+                          <textarea class="form-control" id="text-area" style="height: 100px"></textarea>
                         </div>
                   
                         <div class="mb-3"> <!-- promo code -->
@@ -103,8 +103,8 @@
                         </div>
                   
                         <div class="form-check mb-3">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault">Accetto la Privacy Policy</label>
+                          <input class="form-check-input" type="checkbox" value="" id="policy-check">
+                          <label class="form-check-label" for="policy-check">Accetto la Privacy Policy</label>
                         </div>
                   
                         <div class="d-flex mt-4 justify-content-around"> <!-- submit and result displayer -->
@@ -119,7 +119,7 @@
 
                 </div>
 
-                <div class="col col-xl-3">
+                <div class="col col-xl-3"> <!-- caontacts card -->
                     <div class="card">
                         <svg class="bd-placeholder-img card-img-top fw-bold fs-1" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                             <title>Placeholder</title>
