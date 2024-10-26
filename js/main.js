@@ -26,14 +26,30 @@ const jobs = [ //cost per hour for each job category
 const promoCodes = [ //discont codes
     {
         code: [
-            YHDNU32,
-            JANJC63,
-            PWKCN25,
-            SJDPO96,
-            POCIE24
+            "YHDNU32",
+            "JANJC63",
+            "PWKCN25",
+            "SJDPO96",
+            "POCIE24"
         ],
         discount: 25
     }
 ];
 const hoursNeeded = 10 //hours needed to complete the job
 
+/* functions */
+
+function isValidEmail(email){
+    
+    const splittedEmail = email.split("@");
+    if (splittedEmail.length !== 2) return false; //if email doesn't contain exactly 1 "@" it wont be a 2 long
+    if (splittedEmail[0].length === 0 || splittedEmail[0].length > 64) return false; //first email part must be a 1 to 63 characters long string
+    if (splittedEmail[1].length === 0 || splittedEmail[1].length > 255) return false; //second email part must be a 1 to 254 characters long string
+
+    return true;
+}
+
+console.log(isValidEmail("amerigobovo@gmail.com"));
+console.log(isValidEmail("amerigobovogmail.com"));
+console.log(isValidEmail("amerigobovogmail.com@"));
+console.log(isValidEmail("ameri gobovo@gmail.com"));
