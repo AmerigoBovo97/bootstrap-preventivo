@@ -30,17 +30,17 @@
 
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Servizi</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Contatti</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Servizi</a>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Contatti</a>
+                            </li>
                         
                         </ul>
                         
@@ -62,33 +62,27 @@
                 
                 <div class="col-12">
 
-                    <h1>
-                        Richiesta Preventivo
-                    </h1>
+                    <h1>Richiesta Preventivo</h1>
                     <p>Compila il form per richedere un preventivo per i nostri servizi di sviluppo</p>
 
                     <!-- form -->
                     <form>
-                        <div class="mb-3">
-                          <!-- name -->
+                        <div class="mb-3"> <!-- name -->
                           <label for="input-name" class="form-label">Nome</label>
-                          <input type="text" class="form-control" id="input-name" />
+                          <input type="text" class="form-control" id="input-name">
                         </div>
                   
-                        <div class="mb-3">
-                          <!-- surname -->
+                        <div class="mb-3"> <!-- surname -->
                           <label for="input-surname" class="form-label">Cognome</label>
-                          <input type="text" class="form-control" id="input-surname" />
+                          <input type="text" class="form-control" id="input-surname">
                         </div>
                   
-                        <div class="mb-3">
-                          <!-- email -->
+                        <div class="mb-3"> <!-- email -->
                           <label for="input-email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="input-email" />
+                          <input type="email" class="form-control" id="input-email">
                         </div>
                   
-                        <div class="mb-3">
-                          <!-- job type -->
+                        <div class="mb-3"> <!-- job type -->
                           <label for="input-email" class="form-label">Tipo di lavoro</label>
                           <select class="form-select" aria-label="Default select example">
                             <option selected>Seleziona il tipo di lavoro</option>
@@ -98,40 +92,23 @@
                           </select>
                         </div>
                   
-                        <div class="mb-3">
-                          <!-- textarea -->
-                          <label for="select-job" class="form-label"
-                            >Textarea con Bootstrap 5</label
-                          >
-                          <textarea
-                            class="form-control"
-                            id="select-job"
-                            style="height: 100px"
-                          ></textarea>
+                        <div class="mb-3"> <!-- textarea -->
+                          <label for="select-job" class="form-label">Textarea con Bootstrap 5</label>
+                          <textarea class="form-control" id="select-job" style="height: 100px"></textarea>
                         </div>
                   
-                        <div class="mb-3">
-                          <!-- promo code -->
-                          <label for="input-email" class="form-label">Codice promozionale</label>
-                          <input type="text" class="form-control" id="input-email" />
+                        <div class="mb-3"> <!-- promo code -->
+                          <label for="input-promo-code" class="form-label">Codice promozionale</label>
+                          <input type="text" class="form-control" id="input-promo-code">
                         </div>
                   
                         <div class="form-check mb-3">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label class="form-check-label" for="flexCheckDefault">
-                            Accetto la Privacy Policy
-                          </label>
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">Accetto la Privacy Policy</label>
                         </div>
                   
-                        <div class="d-flex mt-4 justify-content-around">
-                          <button type="submit" class="btn btn-primary">
-                            Calcola Preventivo
-                          </button>
+                        <div class="d-flex mt-4 justify-content-around"> <!-- submit and result displayer -->
+                          <button type="submit" class="btn btn-primary">Calcola Preventivo</button>
                           <div class="d-none">
                             <p>prezzo finale</p>
                             <div id="final-price"></div>
