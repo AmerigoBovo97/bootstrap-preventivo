@@ -11,15 +11,15 @@ const policyCheck = document.getElementById("policy-check");
 /* logic varaibles */
 const jobs = [ //cost per hour for each job category
     {
-        jobCategory: "sviluppo backend", 
+        jobCategory: "Sviluppo Backend", 
         feePerHour: 20.50
     },
     {
-        jobCategory: "sviluppo frontend", 
+        jobCategory: "Sviluppo Frontend", 
         feePerHour: 15.30
     },
     {
-        jobCategory: "analisi progettuale", 
+        jobCategory: "Analisi Progettuale", 
         feePerHour: 33.60
     },
 ];
@@ -56,3 +56,23 @@ function isValidEmail(email){
     return true;
 }
 
+
+
+/**
+ * Description placeholder
+ *
+ * @param {object} select // the select element to add the option to
+ * @param {string} optionContent // visible text for the option in the dropdown
+ * @param {string} optionValue // hidden value used when submitting the form
+ */
+function addSelectOption(select, optionContent, optionValue){
+    const option = document.createElement("option");
+    option.innerHTML = optionContent;
+    option.value = optionValue
+    select.appendChild(option);
+}
+
+
+for(job of jobs){
+    addSelectOption(jobType, job.jobCategory, job.jobCategory)
+}
