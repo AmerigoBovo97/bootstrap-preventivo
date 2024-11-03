@@ -69,23 +69,23 @@
                     <form id="quote-request">
                         <div class="mb-3"> <!-- name -->
                           <label for="input-name" class="form-label">Nome</label>
-                          <input type="text" class="form-control" id="input-name">
+                          <input type="text" class="form-control" id="input-name" required>
                         </div>
-                  
+               S  
                         <div class="mb-3"> <!-- surname -->
                           <label for="input-surname" class="form-label">Cognome</label>
-                          <input type="text" class="form-control" id="input-surname">
+                          <input type="text" class="form-control" id="input-surname" required>
                         </div>
                   
                         <div class="mb-3"> <!-- email -->
                           <label for="input-email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="input-email">
+                          <input type="email" class="form-control" id="input-email" required>
                         </div>
                   
                         <div class="mb-3"> <!-- job type -->
-                          <label for="job-Type" class="form-label">Tipo di lavoro</label>
-                          <select class="form-select" aria-label="Default select example" id="job-type">
-                            <option selected>Seleziona il tipo di lavoro</option>
+                          <label for="job-type" class="form-label">Tipo di lavoro</label>
+                          <select class="form-select" aria-label="Default select example" id="job-type" required>
+                            <option value="" selected>Seleziona il tipo di lavoro</option>
                           </select>
                         </div>
                   
@@ -100,7 +100,7 @@
                         </div>
                   
                         <div class="form-check mb-3">
-                          <input class="form-check-input" type="checkbox" value="" id="policy-check">
+                          <input class="form-check-input" type="checkbox" value="" id="policy-check" required>
                           <label class="form-check-label" for="policy-check">Accetto la Privacy Policy</label>
                         </div>
                   

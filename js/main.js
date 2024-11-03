@@ -70,11 +70,21 @@ function addSelectOption(select, optionContent, optionValue){
     option.innerHTML = optionContent;
     option.value = optionValue;
     select.appendChild(option);
-}
+}S
 
 
 for(job of jobs){
     addSelectOption(jobType, job.jobCategory, job.jobCategory);
+}
+
+
+function requiredInputs(inputs){
+    for (input of inputs){
+        if (!input){
+            return false
+        }
+    }
+    return true
 }
 
 
@@ -90,5 +100,11 @@ myForm.addEventListener("submit", function(event){
     const job = jobType.value;
     const promoCode = userPromoCode.value;
     const privacyPolicy = policyCheck.checked;
+
+   if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
+    console.log("true")
+   }else{
+    alert("compila tutti i campi necessari")
+   }
 
 })
