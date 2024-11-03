@@ -68,11 +68,27 @@ function isValidEmail(email){
 function addSelectOption(select, optionContent, optionValue){
     const option = document.createElement("option");
     option.innerHTML = optionContent;
-    option.value = optionValue
+    option.value = optionValue;
     select.appendChild(option);
 }
 
 
 for(job of jobs){
-    addSelectOption(jobType, job.jobCategory, job.jobCategory)
+    addSelectOption(jobType, job.jobCategory, job.jobCategory);
 }
+
+
+/* logic */
+
+myForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name = userName.value;
+    const surname = userSurname.value;
+    const email = userEmail.value;
+    const job = jobType.value;
+    const promoCode = userPromoCode.value;
+    const privacyPolicy = policyCheck.checked;
+
+})
