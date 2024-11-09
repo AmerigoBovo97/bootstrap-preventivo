@@ -33,6 +33,24 @@ const promoCodes = [ //discont codes
             "POCIE24"
         ],
         discount: 25
+    },{
+        code: [
+            "UJHNM78",
+            "LKOPI90",
+            "BHGFR45",
+            "MNJYP67",
+            "ZXCVB89",
+            "QWERT12",
+            "ASDFG34"
+        ],
+        discount: 30
+    },{
+        code: [
+            "VCXZL56",
+            "PLMNJ23",
+            "ERTHY19"
+        ],
+        discount: 15
     }
 ];
 const hoursNeeded = 10 //hours needed to complete the job
