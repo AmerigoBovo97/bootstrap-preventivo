@@ -57,9 +57,8 @@ function isValidEmail(email){
 }
 
 
-
 /**
- * Description placeholder
+ * add opptions to a select in html
  *
  * @param {object} select // the select element to add the option to
  * @param {string} optionContent // visible text for the option in the dropdown
@@ -87,18 +86,24 @@ for(job of jobs){
 function requiredInputs(inputs){
     for (input of inputs){
         if (!input){
-            return false
+            return false;
         }
     }
-    return true
+    return true;
 }
 
 
+/**
+ * return the discount if the promocode is valid
+ *
+ * @param {string} code // the code to check
+ * @returns {number} // return the discount if the code is valid or 0 if it is not
+ */
 function isValidPromoCode(code){
     for (codeType of promoCodes){
-        if (codeType.code.includes(code)) return codeType.discount
+        if (codeType.code.includes(code)) return codeType.discount;
     }
-    return 0
+    return 0;
 }
 
 
@@ -115,10 +120,10 @@ myForm.addEventListener("submit", function(event){
     const promoCode = userPromoCode.value;
     const privacyPolicy = policyCheck.checked;
 
-   if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
+    if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
     console.log(isValidPromoCode(promoCode))
-   }else{
-    alert("compila tutti i campi necessari")
-   }
+    }else{
+    alert("compila tutti i campi necessari");
+    }
 
 })
