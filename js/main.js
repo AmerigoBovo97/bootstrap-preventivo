@@ -160,7 +160,11 @@ myForm.addEventListener("submit", function(event){
     const privacyPolicy = policyCheck.checked;
 
     if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
-    console.log(isValidPromoCode(promoCode))
+
+        const jobPrice = jobs.find(jobPrice => jobPrice.jobCategory === job).feePerHour;
+        const discount = isValidPromoCode(promoCode);
+        console.log(totalCalculator(jobPrice, hoursNeeded, discount));
+
     }else{
     alert("compila tutti i campi necessari");
     }
