@@ -70,7 +70,7 @@ function addSelectOption(select, optionContent, optionValue){
     option.innerHTML = optionContent;
     option.value = optionValue;
     select.appendChild(option);
-}S
+}
 
 
 for(job of jobs){
@@ -78,6 +78,12 @@ for(job of jobs){
 }
 
 
+/**
+ * returs false if any item of an array is false
+ *
+ * @param {array} inputs
+ * @returns {boolean}
+ */
 function requiredInputs(inputs){
     for (input of inputs){
         if (!input){
@@ -85,6 +91,14 @@ function requiredInputs(inputs){
         }
     }
     return true
+}
+
+
+function isValidPromoCode(code){
+    for (codeType of promoCodes){
+        if (codeType.code.includes(code)) return codeType.discount
+    }
+    return 0
 }
 
 
@@ -102,7 +116,7 @@ myForm.addEventListener("submit", function(event){
     const privacyPolicy = policyCheck.checked;
 
    if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
-    console.log("true")
+    console.log(isValidPromoCode(promoCode))
    }else{
     alert("compila tutti i campi necessari")
    }
