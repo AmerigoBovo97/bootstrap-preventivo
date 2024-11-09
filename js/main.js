@@ -8,7 +8,8 @@ const textArea = document.getElementById("text-area");
 const userPromoCode = document.getElementById("input-promo-code");
 const policyCheck = document.getElementById("policy-check");
 
-/* logic varaibles */
+/* logic varaibles ==================================================================================*/
+
 const jobs = [ //cost per hour for each job category
     {
         jobCategory: "Sviluppo Backend", 
@@ -55,7 +56,8 @@ const promoCodes = [ //discont codes
 ];
 const hoursNeeded = 10 //hours needed to complete the job
 
-/* functions */
+
+/* functions ========================================================================================*/
 
 /**
  * return true if is a valid email
@@ -125,7 +127,7 @@ function isValidPromoCode(code){
 }
 
 
-/* logic */
+/* logic ============================================================================================*/
 
 myForm.addEventListener("submit", function(event){
 
