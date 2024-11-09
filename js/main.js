@@ -127,6 +127,25 @@ function isValidPromoCode(code){
 }
 
 
+/**
+ * return the final price the costumer will pay with 2 decimals
+ *
+ * @param {number} jobPrice // the fee per hour 
+ * @param {number} hours // amount of hours needed to complete the job
+ * @param {number} discount // the amount in percentage that will be detracted
+ * @returns {number} // result with 2 decimals
+ */
+function totalCalculator(jobPrice, hours, discount){
+
+    let total = jobPrice * hours;
+
+    if (discount !== 0){
+        total -= total * discount / 100;
+    }
+    return total.toFixed(2);
+}
+
+
 /* logic ============================================================================================*/
 
 myForm.addEventListener("submit", function(event){
