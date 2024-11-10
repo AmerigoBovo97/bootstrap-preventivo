@@ -7,6 +7,8 @@ const jobType = document.getElementById("job-type");
 const textArea = document.getElementById("text-area");
 const userPromoCode = document.getElementById("input-promo-code");
 const policyCheck = document.getElementById("policy-check");
+const resultDisplayer = document.getElementById("result-displayer")
+
 
 /* logic varaibles ==================================================================================*/
 
@@ -146,6 +148,17 @@ function totalCalculator(jobPrice, hours, discount){
 }
 
 
+function finalPriceElement(price, element){
+
+    const integerPart = Math.floor(price);
+    const decimalPart = (integerPart % 1).toFixed(2).slice(2);
+    const htmlResult = `
+        <div class="mb-0 fw-bold fs-6">Prezzo finale</div>
+        <div class="text-center" id="final-price"><span class="fw-bold fs-5">&#8364;${integerPart}</span><span class="fs-6 text-secondary">,${decimalPart}</span></div>`;     
+    element.innerHTML = htmlResult
+}
+
+
 /* logic ============================================================================================*/
 
 myForm.addEventListener("submit", function(event){
@@ -156,14 +169,18 @@ myForm.addEventListener("submit", function(event){
     const surname = userSurname.value;
     const email = userEmail.value;
     const job = jobType.value;
-    const promoCode = userPromoCode.value;
     const privacyPolicy = policyCheck.checked;
 
     if (requiredInputs([name, surname, job, privacyPolicy]) && isValidEmail(email)){
 
+        const promoCode = userPromoCode.value;
         const jobPrice = jobs.find(jobPrice => jobPrice.jobCategory === job).feePerHour;
         const discount = isValidPromoCode(promoCode);
-        console.log(totalCalculator(jobPrice, hoursNeeded, discount));
+        const price = totalCalculator(jobPrice, hoursNeeded, discount);
+
+        finalPriceElement(price, resultDisplayer);
+        resultDisplayer.classList.remove("d-none")
+
 
     }else{
     alert("compila tutti i campi necessari");

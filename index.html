@@ -29,7 +29,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          
+
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
@@ -104,11 +104,9 @@
                           <label class="form-check-label" for="policy-check">Accetto la Privacy Policy</label>
                         </div>
                   
-                        <div class="d-flex mt-4 justify-content-around"> <!-- submit and result displayer -->
-                          <button type="submit" class="btn btn-primary">Calcola Preventivo</button>
-                          <div class="d-none">
-                            <p>prezzo finale</p>
-                            <div id="final-price"></div>
+                        <div class="d-flex flex-column flex-lg-row mt-4 align-items-center justify-content-lg-around"> <!-- submit and result displayer -->
+                          <button type="submit" class="btn btn-primary mb-3 mb-lg-0">Calcola Preventivo</button>
+                          <div class="d-none" id="result-displayer">
                           </div>
                         </div>
                       </form>
