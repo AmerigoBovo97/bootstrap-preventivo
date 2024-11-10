@@ -87,7 +87,7 @@ function isValidEmail(email){
  * @param {string} optionValue // hidden value used when submitting the form
  */
 function addSelectOption(select, optionContent, optionValue){
-    const option = document.createElement("option");
+    const option = elementCreator("option");
     option.innerHTML = optionContent;
     option.value = optionValue;
     select.appendChild(option);
