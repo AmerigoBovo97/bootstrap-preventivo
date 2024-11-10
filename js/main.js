@@ -154,7 +154,7 @@ function totalCalculator(jobPrice, hours, discount){
  * @param {string} [tag="div"] // the tag
  * @param {array} [classes=[]] // the classes
  * @param {*} [content=""] // the innerHtml
- * @returns {object} // html element
+ * @returns {string} // html element
  */
 function elementCreator(tag = "div", classes = [], content = ""){
 
@@ -179,20 +179,13 @@ function finalPriceElement(price, element){
     const integerPart = Math.floor(price);
     const decimalPart = (integerPart % 1).toFixed(2).slice(2);
 
-    const divElement = document.createElement("div");
-    divElement.classList.add("text-center");
+    const divElement = elementCreator("div", ["text-center"])
 
-    const divTitle = document.createElement("div");
-    divTitle.classList.add("mb-0", "fw-bold", "fs-6");
-    divTitle.innerHTML = "Prezzo finale";
+    const divTitle = elementCreator("div", ["mb-0", "fw-bold", "fs-6"], "Prezzo finale")
 
-    const spanIntegerElement = document.createElement("span");
-    spanIntegerElement.classList.add("fw-bold", "fs-5")
-    spanIntegerElement.innerHTML = `&#8364;${integerPart}`;
+    const spanIntegerElement = elementCreator("span", ["fw-bold", "fs-5"], `&#8364;${integerPart}`)
 
-    const spanDecimalElement = document.createElement("span");
-    spanDecimalElement.classList.add("fs-6", "text-secondary");
-    spanDecimalElement.innerHTML = `,${decimalPart}`;
+    const spanDecimalElement = elementCreator("span", ["fs-6", "text-secondary"], `,${decimalPart}`)
 
     divElement.appendChild(divTitle);
     divElement.appendChild(spanIntegerElement);
