@@ -148,6 +148,12 @@ function totalCalculator(jobPrice, hours, discount){
 }
 
 
+/**
+ * gets the price and an element and add to DOM
+ *
+ * @param {number} price
+ * @param {object} element
+ */
 function finalPriceElement(price, element){
 
     element.classList.remove("d-none")
