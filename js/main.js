@@ -229,7 +229,7 @@ myForm.addEventListener("submit", function(event){
 })
 
 
-// replace every character with his upper case
+// replace every character with his upper case version
 userPromoCode.addEventListener("input", function(){
     userPromoCode.value = userPromoCode.value.toUpperCase();
 })
