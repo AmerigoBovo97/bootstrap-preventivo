@@ -149,6 +149,25 @@ function totalCalculator(jobPrice, hours, discount){
 
 
 /**
+ * create a tage element with classes and content
+ *
+ * @param {string} [tag="div"] // the tag
+ * @param {array} [classes=[]] // the classes
+ * @param {*} [content=""] // the innerHtml
+ * @returns {object} // html element
+ */
+function elementCreator(tag = "div", classes = [], content = ""){
+
+    const element = document.createElement(tag);
+    for(classs of classes){
+        element.classList.add(classs);
+    }
+    element.innerHTML = content;
+    return element;
+}
+
+
+/**
  * gets the price and an element and add to DOM
  *
  * @param {number} price
@@ -180,7 +199,7 @@ function finalPriceElement(price, element){
     divElement.appendChild(spanDecimalElement);
 
     element.innerHTML = "";
-    element.appendChild(divElement)
+    element.appendChild(divElement);
 }
 
 
