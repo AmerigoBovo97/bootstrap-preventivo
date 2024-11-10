@@ -150,12 +150,31 @@ function totalCalculator(jobPrice, hours, discount){
 
 function finalPriceElement(price, element){
 
+    element.classList.remove("d-none")
     const integerPart = Math.floor(price);
     const decimalPart = (integerPart % 1).toFixed(2).slice(2);
-    const htmlResult = `
-        <div class="mb-0 fw-bold fs-6">Prezzo finale</div>
-        <div class="text-center" id="final-price"><span class="fw-bold fs-5">&#8364;${integerPart}</span><span class="fs-6 text-secondary">,${decimalPart}</span></div>`;     
-    element.innerHTML = htmlResult
+
+    const divElement = document.createElement("div");
+    divElement.classList.add("text-center");
+
+    const divTitle = document.createElement("div");
+    divTitle.classList.add("mb-0", "fw-bold", "fs-6");
+    divTitle.innerHTML = "Prezzo finale";
+
+    const spanIntegerElement = document.createElement("span");
+    spanIntegerElement.classList.add("fw-bold", "fs-5")
+    spanIntegerElement.innerHTML = `&#8364;${integerPart}`;
+
+    const spanDecimalElement = document.createElement("span");
+    spanDecimalElement.classList.add("fs-6", "text-secondary");
+    spanDecimalElement.innerHTML = `,${decimalPart}`;
+
+    divElement.appendChild(divTitle);
+    divElement.appendChild(spanIntegerElement);
+    divElement.appendChild(spanDecimalElement);
+
+    element.innerHTML = "";
+    element.appendChild(divElement)
 }
 
 
@@ -179,7 +198,6 @@ myForm.addEventListener("submit", function(event){
         const price = totalCalculator(jobPrice, hoursNeeded, discount);
 
         finalPriceElement(price, resultDisplayer);
-        resultDisplayer.classList.remove("d-none")
 
 
     }else{
