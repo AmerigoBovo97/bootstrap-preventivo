@@ -122,9 +122,13 @@ function requiredInputs(inputs){
  * @returns {number} // return the discount if the code is valid or 0 if it is not
  */
 function isValidPromoCode(code){
-    for (codeType of promoCodes){
-        if (codeType.code.includes(code)) return codeType.discount;
+
+    if (code.length === 7 && !isNaN(code.slice(5))){
+        for (codeType of promoCodes){
+            if (codeType.code.includes(code)) return codeType.discount;
+        }
     }
+
     return 0;
 }
 
